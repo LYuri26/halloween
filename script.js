@@ -33,6 +33,14 @@ const x = setInterval(function() {
 function updateGreeting() {
     const agora = new Date();
     const hora = agora.getHours(); // Obtém a hora atual
-    const saudacao = hora < 18 ? "tarde" : "noite"; // Altera a palavra com base na hora
+    let saudacao;
+
+    // Define a saudação com base na hora
+    if (hora < 8 || hora > 18) {
+        saudacao = "noite"; // Antes das 08 ou após as 18 é "noite"
+    } else {
+        saudacao = "tarde"; // Entre 08 e 18 é "tarde"
+    }
+
     document.getElementById("greeting").innerHTML = `Prepare-se para uma ${saudacao} cheia de sustos e diversão!`;
 }
