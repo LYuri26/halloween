@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> <!-- Fonte Halloween -->
+    <link rel="stylesheet" href="style.css">
+    <title>Evento de Halloween</title>
+</head>
+<body onload="updateGreeting()"> <!-- Chama a função ao carregar a página -->
+    <div class="container">
+        <h1>Bem-vindo ao Evento de Halloween!</h1>
+        <p id="greeting">Prepare-se para uma tarde cheia de sustos e diversão!</p> <!-- Alterado para usar o ID -->
+        <p>Data: 31 de Outubro de 2024 às 13:30</p>
+        <p>Endereço: Praça Frei Eugênio, R. São Benedito, 85, Uberaba - MG, 38010-280</p>
+                <!-- Container para o mapa -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387212.7556896785!2d-47.9406572!3d-19.9309093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9b4f77c9c8434c%3A0x104aa195d68e901c!2sPra%C3%A7a%20Frei%20Eug%C3%AAnio!5e0!3m2!1spt-BR!2sbr!4v1696131402038!5m2!1spt-BR!2sbr" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- Link para o JavaScript -->
+</body>
+</html>
