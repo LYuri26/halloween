@@ -1,74 +1,131 @@
 body {
   background-image: url('./9f7e9e3c9175cf44fbe4b5f7899ff838.gif'); /* Caminho para o GIF de fundo */
-  background-size:auto; /* Cobre toda a tela */
-  background-repeat: repeat; /* Não repete a imagem */
+  background-size: 100px; /* Tamanho do GIF */
+  background-repeat: repeat; /* Repetição do GIF */
   background-position: center; /* Centraliza a imagem de fundo */
-  background-size: 100px; /* Tamanho do GIF, ajuste conforme necessário */
   color: #fff; /* Texto branco */
   font-family: 'Creepster', cursive; /* Fonte temática */
   display: flex;
-  flex-direction: column; /* Coloca elementos em coluna */
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
   margin: 0;
+  padding: 0 20px; /* Margem lateral para telas menores */
   text-align: center;
-  animation: fadeIn 1s; /* Animação de entrada */
 }
 
 .container {
-  background-color: rgba(4, 92, 172, 0.8); /* Fundo com cor azul misturada */
+  background-color: rgba(4, 92, 172, 0.8); /* Fundo com cor azul */
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column; /* Alinha conteúdo verticalmente */
-  align-items: center; /* Centraliza horizontalmente */
-  max-width: 800px; /* Limita a largura do container */
-  margin: 0 auto; /* Centraliza o container na tela */
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 60px auto; /* Distância do topo e centraliza horizontalmente */
 }
 
 h1 {
   color: orange; /* Cor do título */
+  font-size: 3em; /* Tamanho maior do título */
+  margin: 20px 0; /* Espaço entre o título e outros elementos */
   animation: bounce 1s infinite; /* Animação de pulsação */
 }
 
 p {
-  margin: 10px 0; /* Espaçamento entre parágrafos */
+  font-size: 2em; /* Tamanho de fonte maior */
+  margin: 15px 0; /* Espaçamento entre parágrafos */
 }
+
 .logo {
-  width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+  width: 150px;
   margin-bottom: 20px; /* Espaço entre a logo e o título */
 }
 
 .map-container {
-  width: 100%; /* Largura total do container do mapa */
-  height: 400px; /* Altura do mapa */
-  margin-top: 20px; /* Espaçamento acima do mapa */
-  border-radius: 10px; /* Bordas arredondadas */
-  overflow: hidden; /* Oculta partes do mapa que saem do container */
+  width: 100%;
+  max-width: 600px; /* Limita o tamanho do mapa em telas grandes */
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .map-container iframe {
-  width: 100%; /* Largura total do iframe */
-  height: 100%; /* Altura total do iframe */
-  border: 0; /* Remove a borda */
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 #countdown {
-  font-size: 2.5em; 
+  font-size: 2em;
   margin: 20px 0;
 }
 
 #countdown span {
-  background-color: purple; 
-  color: orange; 
+  background-color: purple;
+  color: orange;
   padding: 10px;
   border-radius: 10px;
   margin: 0 5px;
-  animation: pulse 1.5s infinite; 
+  animation: pulse 1.5s infinite;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px; /* Reduz o padding em telas menores */
+    margin-top: 40px; /* Menor margem superior */
+  }
+
+  h1 {
+    font-size: 1.8em; /* Reduz o tamanho do título em telas menores */
+  }
+
+  p {
+    font-size: 1em; /* Ajusta o tamanho da fonte para melhor leitura */
+  }
+
+  #countdown {
+    font-size: 1.5em; /* Reduz o tamanho do countdown */
+  }
+
+  .map-container {
+    height: 300px; /* Reduz a altura do mapa */
+  }
+}
+
+/* Animação de fadeIn para a entrada da página */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animação de pulsação para o título */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Animação de pulsação para countdown */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
 
 
 @keyframes fadeIn {
@@ -119,28 +176,4 @@ p {
 @keyframes flow {
   0% { box-shadow: none; filter: blur(.5px); transform: rotate(3deg); }
   100% { box-shadow: 0px -7px 25px #fff; filter: blur(1px); background-size: 63px 80%, 100px 70%; background-position: -2px -15px, 5px 23px; transform: scaleY(1.2) rotateX(-3deg) translate(80px, -50px); }
-}
-
-/* Estilo para a explosão (removido conforme solicitado) */
-#explosion {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0; /* Inicialmente invisível */
-  height: 0; /* Inicialmente invisível */
-  background-image: url('./9f7e9e3c9175cf44fbe4b5f7899ff838.gif'); /* Coloque sua imagem de explosão */
-  background-size: cover;
-  transform: translate(-50%, -50%); /* Centraliza */
-  animation: none; /* Inicialmente sem animação */
-}
-
-.hidden {
-  display: none; /* Oculta o elemento quando necessário */
-}
-
-/* Animações */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
 }
