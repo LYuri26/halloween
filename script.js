@@ -1,5 +1,5 @@
 // Define a data do evento usando formato ISO 8601
-const eventoData = new Date("2024-10-31T13:30:00").getTime(); // Data e hora do evento
+const eventoData = new Date("2024-10-30T18:55:00").getTime(); // Data e hora do evento
 
 // Atualiza a contagem a cada segundo
 const x = setInterval(function() {
